@@ -16,6 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100%;
             background-color: #3b4049; /* Slightly lighter dark color */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -52,6 +53,23 @@
             opacity: 1;
             visibility: visible;
         }
+        #discord-button {
+            position: fixed;
+            bottom: 20px;
+            padding: 10px 20px;
+            background-color: #7289da;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #discord-button:hover {
+            background-color: #5b6eae;
+        }
     </style>
 </head>
 <body>
@@ -61,11 +79,13 @@
     <div id="image-container">
         <img src="image.png" alt="Whatcha Doin?">
     </div>
+    <a id="discord-button" href="https://discord.gg/vtbSF2zw5Q" target="_blank">Discord</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const zipFolder = document.getElementById('zip-folder');
             const imageContainer = document.getElementById('image-container');
+            const discordButton = document.getElementById('discord-button');
 
             zipFolder.addEventListener('click', () => {
                 zipFolder.style.opacity = '0';
